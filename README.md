@@ -91,3 +91,5 @@ Según los requerimientos, la venta se hará con una pasarela reconocida (recome
 ## Proceso creativo
 
 Las etapas de `assets/img/proceso-*.webp` se generaron a partir del logo (garabato, entintado y color) como demostración. Cuando David entregue fotos o videos reales de boceto → muro / diseño → tatuaje, reemplazarlas por esas.
+
+Al cambiar `main.css` o `main.js`, actualizar el `?v=` de sus enlaces en `index.html` (el servidor los guarda en caché un día).
