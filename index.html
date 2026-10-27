@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Da Pencil · Muralismo, graffiti y tatuajes en Bogotá</title>
+  <meta name="description" content="Pencil, “el de los muñequitos”: muralista, grafitero y tatuador de Bogotá. Murales con personaje para negocios, tatuajes new school y cartoon, y los encuentros de dibujo Garabatos y Mañas.">
+  <!-- Subdominio de pruebas: quitar esta línea al pasar a producción -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f7c51e">
+  <meta property="og:title" content="Da Pencil · El de los muñequitos">
+  <meta property="og:description" content="Murales, graffiti y tatuajes con personajes que tienen actitud. Bogotá, Colombia.">
+  <meta property="og:image" content="assets/img/obra/mural-corferias.webp">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Patrick+Hand&family=Patrick+Hand+SC&display=swap">
+  <link rel="preload" as="image" href="assets/img/david-caricatura.webp" fetchpriority="high">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- Filtros SVG compartidos: temblor de trazo a mano -->
+  <svg class="oculto" aria-hidden="true" focusable="false">
+    <filter id="a-mano">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3"/>
+      <feDisplacementMap in="SourceGraphic" scale="3"/>
+    </filter>
+  </svg>
+
+  <!-- El lápiz que escribe mientras bajas -->
+  <div class="progreso" aria-hidden="true">
+    <span class="progreso__trazo"></span>
+    <svg class="progreso__lapiz" viewBox="0 0 64 16"><path d="M6 1.5h40v13H6z" fill="#f7c51e"/><path d="M6 6h40M6 10h40" stroke="#d9a400"/><path d="M0 1.5h6v13H0z" fill="#e8479b"/><path d="M46 1.5h4v13h-4z" fill="#c3c7cd"/><path d="M50 1.5 64 8l-14 6.5z" fill="#f3cf9f"/><path d="M59 5.7 64 8l-5 2.3z" fill="#2b2b2b"/><path d="M0 1.5h50L64 8l-14 6.5H0z" fill="none" stroke="#1b1b1b" stroke-width="1.5" stroke-linejoin="round"/></svg>
+  </div>
+
+  <canvas class="grafito" aria-hidden="true"></canvas>
+
+  <header class="barra">
+    <a class="marca" href="#inicio" aria-label="Da Pencil, ir al inicio">
+      <img src="assets/img/mascota.webp" width="52" height="52" alt="">
+      <span>Da&nbsp;Pencil</span>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menu">
+      <svg viewBox="0 0 32 24" aria-hidden="true"><path d="M3 4c8-1 17 1 26-1M2 12c9 1 18-1 27 1M4 20c8-1 16 1 25-1" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+      <span>Menú</span>
+    </button>
+    <nav id="menu" class="menu" aria-label="Secciones">
+      <a href="#murales" class="pestana pestana--amarilla">Murales</a>
+      <a href="#tatuajes" class="pestana pestana--magenta">Tatuajes</a>
+      <a href="#trayectoria" class="pestana pestana--papel">Trayectoria</a>
+      <a href="#garabatos" class="pestana pestana--rayada">Garabatos</a>
+      <a href="#contacto" class="pestana pestana--tinta">¿Hablamos?</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ============ HOJA 1 · LIBRETA DE BOCETOS ============ -->
+    <section id="inicio" class="hoja hoja--libreta portada">
+      <div class="espiral" aria-hidden="true"></div>
+      <div class="portada__texto">
+        <p class="nota-mano revela">Muralismo · Graffiti · Tattoo — Bogotá</p>
+        <h1 class="portada__titulo">
+          <svg class="resaltador" viewBox="0 0 600 140" preserveAspectRatio="none" aria-hidden="true"><path d="M18 92C120 60 260 70 380 58s170-8 200 6M30 112c140-22 300-24 540-20" fill="none" stroke="#f7c51e" stroke-width="34" stroke-linecap="round" pathLength="1"/></svg>
+          <img src="assets/img/pencil-wordmark.webp" width="1400" height="441" alt="Pencil">
+        </h1>
+        <p class="portada__alias revela">(El de los muñequitos)</p>
+        <p class="portada__intro revela">Llevo más de <strong>20 años</strong> metido en el cartoon y el graffiti, y desde hace más de una década también en la piel. Creo personajes con vida propia, cargados de <span class="subraya">actitud y color</span>, para tu muro, tu negocio o tu brazo.</p>
+        <div class="portada__acciones revela">
+          <a class="boton boton--amarillo" href="https://wa.me/573117457444?text=Hola%20Pencil%2C%20quiero%20cotizar%20un%20mural%20%F0%9F%8E%A8" target="_blank" rel="noopener">Quiero un mural</a>
+          <a class="boton boton--magenta" href="https://wa.me/573117457444?text=Hola%20Pencil%2C%20quiero%20agendar%20un%20tatuaje%20%E2%9C%8F%EF%B8%8F" target="_blank" rel="noopener">Quiero un tatuaje</a>
+        </div>
+      </div>
+      <figure class="portada__arte">
+        <img class="portada__david" src="assets/img/david-caricatura.webp" width="1024" height="1100" alt="Caricatura de David Pencil con gorra y gafas, sosteniendo un lápiz, junto a su mascota: un lápiz amarillo con borrador magenta y alas.">
+        <figcaption class="globo" aria-hidden="true">Del muro a la piel,<br>sin perder el trazo.</figcaption>
+        <svg class="garabato garabato--estrella" viewBox="0 0 60 60" aria-hidden="true"><path d="M30 4l7 17 18 2-14 11 5 18-16-10-15 10 4-18L5 23l18-2z" pathLength="1"/></svg>
+        <svg class="garabato garabato--rizo" viewBox="0 0 120 60" aria-hidden="true"><path d="M5 40c15-30 30 10 20 10s0-35 25-25 5 30 15 25 10-35 30-25 10 25 20 20" pathLength="1"/></svg>
+      </figure>
+      <a class="bajar" href="#murales"><span>Pasa la hoja</span>
+        <svg viewBox="0 0 40 60" aria-hidden="true"><path d="M20 4c-3 15 3 30 0 48M8 40l12 14 12-14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </section>
+
+    <!-- Tira de papel con la frase -->
+    <aside class="tira" aria-label="Frase de Pencil">
+      <p>“Solo se trata de dibujar lo que sientes y sentir lo que dibujas.”</p>
+    </aside>
+
+    <!-- ============ HOJA 2 · MURALES (principal) ============ -->
+    <section id="murales" class="hoja hoja--muro">
+      <header class="encabezado">
+        <p class="etiqueta">01 · Lo principal</p>
+        <h2 class="titulo">Muros que <span class="titulo__acento titulo__acento--magenta">hablan
+          <svg class="goteo" viewBox="0 0 240 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 4h240v8c-8 0-9 6-10 18s-6 13-7 0-3-14-12-14-10 30-12 34-6 2-6-12-6-20-18-20-14 8-16 14-4 4-5-2-8-12-20-12-15 16-16 26-6 6-6-6-6-20-20-20-20 6-22 10-4 2-4-4-10-6-22-6-14 20-16 34-5 6-6-6-4-28-18-28H0z" fill="#e8479b"/></svg>
+        </span></h2>
+        <p class="bajada">Graffiti y muralismo son mi lenguaje principal. Cafés, pizzerías, bares y tiendas de Bogotá me llaman para que <strong>sus muros tengan un personaje que la gente recuerde</strong>: hecho a la medida de tu negocio, con mi trazo.</p>
+      </header>
+
+      <ul class="cifras" role="list">
+        <li class="cifra revela"><span class="cifra__num">27+</span><span class="cifra__txt">murales en Bogotá y Colombia</span></li>
+        <li class="cifra revela"><span class="cifra__num">20</span><span class="cifra__txt">años entre cartoon y graffiti</span></li>
+        <li class="cifra revela"><span class="cifra__num">1</span><span class="cifra__txt">personaje único por cada muro</span></li>
+      </ul>
+
+      <div class="galeria galeria--murales">
+        <figure class="polaroid polaroid--grande revela">
+          <button class="polaroid__btn" data-ampliar aria-label="Ampliar: mural en Corferias"><img src="assets/img/obra/mural-corferias.webp" width="905" height="1200" loading="lazy" alt="Mural en Corferias: un perro gigante con un gato y un ratón pintados sobre ladrillo verde."></button>
+          <figcaption>Corferias · “Dando vida a los ladrillos”</figcaption>
+        </figure>
+        <figure class="polaroid revela">
+          <button class="polaroid__btn" data-ampliar aria-label="Ampliar: Reina Rana"><img src="assets/img/obra/mural-reina-rana.webp" width="1080" height="814" loading="lazy" alt="Mural de una rana con corona en tonos verdes y magenta."></button>
+          <figcaption>Reina Rana · @boliroom_</figcaption>
+        </figure>
+        <figure class="polaroid revela">
+          <button class="polaroid__btn" data-ampliar aria-label="Ampliar: Conejo feroz"><img src="assets/img/obra/mural-conejo-feroz.webp" width="1080" height="814" loading="lazy" alt="Mural de un conejo feroz comiendo pizza en una persiana metálica."></button>
+          <figcaption>Conejo feroz · @pizza_patos_</figcaption>
+        </figure>
+        <figure class="polaroid revela">
+          <button class="polaroid__btn" data-ampliar aria-label="Ampliar: Gata chef"><img src="assets/img/obra/mural-gata-chef.webp" width="1080" height="1080" loading="lazy" alt="Mural de una gata rosada con un helado, pintado en una persiana."></button>
+          <figcaption>Gata chef · @antojitosnancy</figcaption>
+        </figure>
+        <figure class="polaroid revela">
+          <button class="polaroid__btn" data-ampliar aria-label="Ampliar: El weedson"><img src="assets/img/obra/mural-weedson.webp" width="904" height="1200" loading="lazy" alt="Mural de un personaje verde de ojos rojos, sonriendo."></button>
+          <figcaption>El weedson · @coffeeshopgreen</figcaption>
+        </figure>
+        <figure class="polaroid revela">
+          <button class="polaroid__btn" data-ampliar aria-label="Ampliar: Ratón ninja"><img src="assets/img/obra/mural-raton-ninja.webp" width="1080" height="809" loading="lazy" alt="Mural de un ratón ninja en tonos grises y rojos."></button>
+          <figcaption>Ratón ninja · @mause_ink_</figcaption>
+        </figure>
+        <figure class="polaroid revela">
+          <button class="polaroid__btn" data-ampliar aria-label="Ampliar: La colección de pugs"><img src="assets/img/obra/mural-pugs.webp" width="1080" height="888" loading="lazy" alt="Mural de un personaje sacando la lengua junto a un letrero de neón verde."></button>
+          <figcaption>La colección de pugs · @greenpugshop</figcaption>
+        </figure>
+        <figure class="polaroid polaroid--ancha revela">
+          <button class="polaroid__btn" data-ampliar aria-label="Ampliar: Mural para pizzería"><img src="assets/img/obra/mural-pizzeria.webp" width="1080" height="814" loading="lazy" alt="Mural comercial de una chica y un gato chef con una pizza."></button>
+          <figcaption>Mural comercial · pizzería en Bogotá</figcaption>
+        </figure>
+      </div>
+
+      <div class="proceso">
+        <h3 class="subtitulo">¿Cómo nace tu muro?</h3>
+        <ol class="notas" role="list">
+          <li class="nota nota--amarilla revela"><b>1</b> Me cuentas tu negocio y me mandas fotos del muro.</li>
+          <li class="nota nota--rosa revela"><b>2</b> Dibujo el boceto del personaje a tu medida.</li>
+          <li class="nota nota--blanca revela"><b>3</b> Ajustamos detalles y te paso la cotización.</li>
+          <li class="nota nota--amarilla revela"><b>4</b> Llegan los aerosoles… y el muro cobra vida.</li>
+        </ol>
+        <a class="boton boton--tinta" href="https://wa.me/573117457444?text=Hola%20Pencil%2C%20tengo%20un%20muro%20y%20quiero%20un%20personaje%20tuyo" target="_blank" rel="noopener">¿Tienes un muro? Hagámoslo hablar</a>
+      </div>
+    </section>
+
+    <!-- ============ HOJA 3 · TATUAJES (papel de calco) ============ -->
+    <section id="tatuajes" class="hoja hoja--calco">
+      <header class="encabezado">
+        <p class="etiqueta">02 · La piel como lienzo</p>
+        <h2 class="titulo">Tatuajes con <span class="titulo__acento titulo__acento--amarillo">personaje</span></h2>
+        <p class="bajada">New school, retratos cartoon, cover ups y piezas de convención. Mi estilo se reconoce a metros: <strong>color, personajes y actitud</strong>. Y te muestro el proceso sesión a sesión, para que confíes desde la primera cita. Residente de <strong>Clan Tattoo Studio</strong>.</p>
+      </header>
+
+      <div class="galeria galeria--tattoo">
+        <figure class="polaroid revela">
+          <button class="polaroid__btn" data-ampliar aria-label="Ampliar: La diablita"><img src="assets/img/obra/tattoo-diablita.webp" width="1080" height="1101" loading="lazy" alt="Tatuaje new school de una diablita roja de estilo cartoon en la pierna."></button>
+          <figcaption>“La diablita” · 1er puesto New School, Cali 2021</figcaption>
+          <span class="sello sello--magenta" aria-hidden="true">¡1er puesto!</span>
+        </figure>
+        <figure class="polaroid revela">
+          <button class="polaroid__btn" data-ampliar aria-label="Ampliar: Jaguar latino"><img src="assets/img/obra/tattoo-jaguar.webp" width="904" height="1200" loading="lazy" alt="Tatuaje a color de un jaguar rugiendo en el antebrazo, en proceso."></button>
+          <figcaption>Jaguar latino · pieza en proceso</figcaption>
+        </figure>
+        <figure class="polaroid revela">
+          <button class="polaroid__btn" data-ampliar aria-label="Ampliar: Convención Bucaramanga 2025"><img src="assets/img/obra/tattoo-bucaramanga-2025.webp" width="960" height="1200" loading="lazy" alt="Pencil tatuando en vivo durante una convención, con público alrededor."></button>
+          <figcaption>2º puesto Nueva Escuela · Bucaramanga 2025</figcaption>
+        </figure>
+      </div>
+
+      <ul class="estilos" role="list">
+        <li>New school</li><li>Retrato cartoon</li><li>Cover up</li><li>Personaje propio</li><li>Piezas de convención</li>
+      </ul>
+      <a class="boton boton--magenta" href="https://wa.me/573117457444?text=Hola%20Pencil%2C%20quiero%20agendar%20un%20tatuaje%20%E2%9C%8F%EF%B8%8F" target="_blank" rel="noopener">Agenda tu tatuaje</a>
+    </section>
+
+    <!-- ============ HOJA 4 · TRAYECTORIA (corcho) ============ -->
+    <section id="trayectoria" class="hoja hoja--corcho">
+      <header class="encabezado">
+        <p class="etiqueta">03 · Te lo has ganado</p>
+        <h2 class="titulo titulo--claro">Premios y <span class="titulo__acento titulo__acento--amarillo">jurado</span></h2>
+      </header>
+      <div class="tablero">
+        <div class="papelito papelito--amarillo revela">
+          <h3>Premios</h3>
+          <ul>
+            <li><b>1er puesto New School</b> + mejor tattoo del 3er día · Cali Tattoo Festival 2021</li>
+            <li><b>1er puesto</b> · Kennedy Expo Tatt 2019</li>
+            <li><b>2º puesto</b> Nueva Escuela · Bucaramanga Tattoo Festival 2025</li>
+            <li><b>2º puesto</b> categoría Libre · Inkenshi Tattoo Fest, Soacha 2026</li>
+          </ul>
+        </div>
+        <figure class="polaroid polaroid--chinche revela">
+          <button class="polaroid__btn" data-ampliar aria-label="Ampliar: Ganadores Inkenshi 2026"><img src="assets/img/obra/inkenshi-2026.webp" width="960" height="1200" loading="lazy" alt="Pencil junto a otro tatuador ganador en el photocall del Inkenshi Tattoo Fest 2026."></button>
+          <figcaption>Inkenshi Tattoo Fest 2026</figcaption>
+        </figure>
+        <div class="papelito papelito--rosa revela">
+          <h3>Jurado e invitado</h3>
+          <ul>
+            <li>Jurado · <b>Expo Tattoo La Sábana</b></li>
+            <li>Jurado · <b>Frontera Ink</b>, Ipiales</li>
+            <li>Jurado de graffiti + imagen oficial <b>PACHAMAMA</b> · Mafia Tattoo Festival, Jamundí</li>
+            <li>Invitado especial · Festival de Tatuaje <b>Oriente Colombia</b> 2025</li>
+            <li>“Artista Amigo” · Expo Tattoo <b>Ciudad Bolívar</b> 2026</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOJA 5 · GARABATOS Y MAÑAS (cuaderno rayado) ============ -->
+    <section id="garabatos" class="hoja hoja--rayada">
+      <header class="encabezado">
+        <p class="etiqueta">04 · Muy pronto</p>
+        <h2 class="titulo">Garabatos <span class="titulo__acento titulo__acento--magenta">y Mañas</span></h2>
+        <p class="bajada">No solo creo: <strong>enseño</strong>. Garabatos y Mañas es la comunidad de los <em>¡Garabateros Mañosos!</em>: charlas de creación de personajes y encuentros de dibujo en casas de cultura y convenciones. Más que la perfección, me interesa el proceso: equivocarse, explorar y encontrar las mañas en medio del caos.</p>
+      </header>
+
+      <!-- Este bloque lo llena assets/js/main.js leyendo data/evento.json -->
+      <div class="evento" data-evento>
+        <div class="evento__pronto">
+          <span class="sello sello--grande" aria-hidden="true">Próximamente</span>
+          <p>Estamos preparando el próximo encuentro. Cuando haya fecha oficial, aquí verás la cuenta regresiva y podrás comprar tu entrada.</p>
+          <a class="boton boton--amarillo" href="https://wa.me/573117457444?text=Hola%20Pencil%2C%20av%C3%ADsame%20del%20pr%C3%B3ximo%20Garabatos%20y%20Ma%C3%B1as" target="_blank" rel="noopener">Avísame por WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="galeria galeria--garabatos">
+        <figure class="polaroid revela">
+          <button class="polaroid__btn" data-ampliar aria-label="Ampliar: afiche Cancha Creativa"><img src="assets/img/obra/afiche-cancha-creativa.webp" width="924" height="1200" loading="lazy" alt="Afiche del seminario Cancha Creativa en la Casa de la Cultura de Ciudad Bolívar, 6 de julio."></button>
+          <figcaption>Seminario Cancha Creativa · Ciudad Bolívar</figcaption>
+        </figure>
+        <figure class="polaroid revela">
+          <button class="polaroid__btn" data-ampliar aria-label="Ampliar: Artista Amigo 2026"><img src="assets/img/obra/artista-amigo-2026.webp" width="921" height="1200" loading="lazy" alt="Afiche de Don Pencil como Artista Amigo en la Expo Tattoo Ciudad Bolívar 2026."></button>
+          <figcaption>“Artista Amigo” · Expo Tattoo Ciudad Bolívar 2026</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ HOJA 6 · CONTACTO (nota doblada) ============ -->
+    <section id="contacto" class="hoja hoja--nota">
+      <svg class="avion" viewBox="0 0 120 80" aria-hidden="true"><path d="M4 40 116 6 70 74 56 48zM56 48l60-42M56 48l-8 24 22-20" pathLength="1"/></svg>
+      <h2 class="titulo">¿Hablamos?</h2>
+      <p class="bajada">Cuéntame tu idea: un muro para tu negocio, un tatuaje con personaje o una charla para tu evento. Te respondo por WhatsApp.</p>
+      <div class="contacto__acciones">
+        <a class="boton boton--amarillo boton--xl" href="https://wa.me/573117457444?text=Hola%20Pencil%2C%20vi%20tu%20web%20y%20quiero%20hablar%20contigo" target="_blank" rel="noopener">WhatsApp · +57 311 745 7444</a>
+        <a class="boton boton--papel" href="https://www.instagram.com/david_pencil/" target="_blank" rel="noopener">Instagram · @david_pencil</a>
+      </div>
+      <p class="nota-mano">Desde Bogotá, donde los garabatos cobran vida.</p>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <img src="assets/img/mascota.webp" width="40" height="40" alt="" loading="lazy">
+    <p>© <span data-anio>2026</span> Da Pencil · Bogotá, Colombia</p>
+    <p class="pie__digicy">Página dibujada por <a href="https://digicyus.com" target="_blank" rel="noopener">Digicy</a></p>
+  </footer>
+
+  <dialog class="visor" aria-label="Obra ampliada">
+    <figure>
+      <img alt="">
+      <figcaption></figcaption>
+    </figure>
+    <button class="visor__cerrar" type="button" aria-label="Cerrar">✕</button>
+    <button class="visor__nav visor__nav--prev" type="button" aria-label="Anterior">‹</button>
+    <button class="visor__nav visor__nav--next" type="button" aria-label="Siguiente">›</button>
+  </dialog>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
