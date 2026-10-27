@@ -35,7 +35,7 @@
   <!-- El lápiz que escribe mientras bajas -->
   <div class="progreso" aria-hidden="true">
     <span class="progreso__trazo"></span>
-    <svg class="progreso__lapiz" viewBox="0 0 64 16"><path d="M6 1.5h40v13H6z" fill="#f7c51e"/><path d="M6 6h40M6 10h40" stroke="#d9a400"/><path d="M0 1.5h6v13H0z" fill="#e8479b"/><path d="M46 1.5h4v13h-4z" fill="#c3c7cd"/><path d="M50 1.5 64 8l-14 6.5z" fill="#f3cf9f"/><path d="M59 5.7 64 8l-5 2.3z" fill="#2b2b2b"/><path d="M0 1.5h50L64 8l-14 6.5H0z" fill="none" stroke="#1b1b1b" stroke-width="1.5" stroke-linejoin="round"/></svg>
+    <svg class="progreso__lapiz" viewBox="0 0 64 16"><path d="M6 1.5h40v13H6z" fill="#ecbd15"/><path d="M6 6h40M6 10h40" stroke="#c99d0c"/><path d="M0 1.5h6v13H0z" fill="#f0ace6"/><path d="M46 1.5h4v13h-4z" fill="#c3c3c3"/><path d="M50 1.5 64 8l-14 6.5z" fill="#f3cf9f"/><path d="M59 5.7 64 8l-5 2.3z" fill="#2b2b2b"/><path d="M0 1.5h50L64 8l-14 6.5H0z" fill="none" stroke="#1b1b1b" stroke-width="1.5" stroke-linejoin="round"/></svg>
   </div>
 
   <canvas class="grafito" aria-hidden="true"></canvas>
@@ -51,6 +51,7 @@
     </button>
     <nav id="menu" class="menu" aria-label="Secciones">
       <a href="#murales" class="pestana pestana--amarilla">Murales</a>
+      <a href="#proceso" class="pestana pestana--virola">Proceso</a>
       <a href="#tatuajes" class="pestana pestana--magenta">Tatuajes</a>
       <a href="#trayectoria" class="pestana pestana--papel">Trayectoria</a>
       <a href="#garabatos" class="pestana pestana--rayada">Garabatos</a>
@@ -66,7 +67,7 @@
       <div class="portada__texto">
         <p class="rotulo revela">Muralismo · Graffiti · Tattoo — Bogotá</p>
         <h1 class="portada__titulo">
-          <svg class="resaltador" viewBox="0 0 600 140" preserveAspectRatio="none" aria-hidden="true"><path d="M18 92C120 60 260 70 380 58s170-8 200 6M30 112c140-22 300-24 540-20" fill="none" stroke="#f7c51e" stroke-width="34" stroke-linecap="round" pathLength="1"/></svg>
+          <svg class="resaltador" viewBox="0 0 600 140" preserveAspectRatio="none" aria-hidden="true"><path d="M18 92C120 60 260 70 380 58s170-8 200 6M30 112c140-22 300-24 540-20" fill="none" stroke="#ecbd15" stroke-width="34" stroke-linecap="round" pathLength="1"/></svg>
           <img src="assets/img/pencil-wordmark.webp" width="1400" height="441" alt="Pencil">
         </h1>
         <p class="portada__alias revela">(El de los muñequitos)</p>
@@ -159,12 +160,51 @@
       </div>
     </section>
 
+    <!-- ============ HOJA 2b · EL PROCESO (papel de boceto) ============ -->
+    <section id="proceso" class="hoja hoja--boceto" data-proceso>
+      <span class="tag tag--proceso" aria-hidden="true">Sin miedo al error</span>
+      <header class="encabezado">
+        <p class="etiqueta">02 · El proceso</p>
+        <h2 class="titulo">Del garabato al <span class="titulo__acento titulo__acento--magenta pintura">muñequito</span></h2>
+        <p class="bajada">Más que buscar la perfección, me interesa <strong>el proceso</strong>: equivocarme, explorar y encontrar las mañas en medio del caos. Así nace cada personaje, sea para un muro o para tu piel.</p>
+      </header>
+
+      <div class="proceso-lab">
+        <div class="proceso-lab__lienzo" aria-live="polite">
+          <svg class="mancha mancha--proceso" aria-hidden="true"><use href="#splat"/></svg>
+          <img class="capa capa--1" src="assets/img/proceso-1-garabato.webp" width="512" height="512" loading="lazy" alt="Etapa 1: el lápiz de Pencil como garabato a lápiz, trazos sueltos.">
+          <img class="capa capa--2" src="assets/img/proceso-2-linea.webp" width="512" height="512" loading="lazy" alt="Etapa 2: el personaje entintado, solo líneas negras.">
+          <img class="capa capa--3" src="assets/img/proceso-3-color.webp" width="512" height="512" loading="lazy" alt="Etapa 3: el personaje a color, amarillo con borrador rosa.">
+          <p class="proceso-lab__nota" data-proceso-nota>1 · Garabato</p>
+        </div>
+
+        <div class="proceso-lab__pasos">
+          <div class="pasos" role="group" aria-label="Etapas del proceso">
+            <button type="button" class="paso" data-paso="1" aria-pressed="true"><b>1</b> Garabato</button>
+            <button type="button" class="paso" data-paso="2" aria-pressed="false"><b>2</b> Línea</button>
+            <button type="button" class="paso" data-paso="3" aria-pressed="false"><b>3</b> Color</button>
+            <button type="button" class="paso" data-paso="4" aria-pressed="false"><b>4</b> ¡Vida!</button>
+          </div>
+          <ol class="explica" role="list">
+            <li data-explica="1"><b>Garabato.</b> La idea suelta, a lápiz y sin miedo a equivocarse. Aquí se buscan la pose y la actitud.</li>
+            <li data-explica="2"><b>Línea.</b> Defino el personaje con outlines gruesos: cara de travieso, dientes en bloque, la mirada.</li>
+            <li data-explica="3"><b>Color.</b> Amarillo lápiz, rosa borrador, sombras y brillos. El color es lo que se ve a metros.</li>
+            <li data-explica="4"><b>¡Vida!</b> El muñequito sale del papel: al muro con aerosol, a la piel con la aguja, a la ropa, a stickers y figuras.</li>
+          </ol>
+          <figure class="polaroid polaroid--vida">
+            <img src="assets/img/obra/david-hoodie.webp" width="1080" height="1096" loading="lazy" alt="David de espaldas con un buzo negro que lleva estampado su lápiz con alas.">
+            <figcaption>El lápiz ya vive en su ropa</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <div class="cinta-peligro cinta-peligro--magenta" aria-hidden="true"><div class="cinta-peligro__pista"><span>Tattoo</span><i>✱</i><span>New school</span><i>✱</i><span>Cartoon</span><i>✱</i><span>Cover up</span><i>✱</i><span>Clan Tattoo Studio</span><i>✱</i><span>Tattoo</span><i>✱</i><span>New school</span><i>✱</i><span>Cartoon</span><i>✱</i><span>Cover up</span><i>✱</i><span>Clan Tattoo Studio</span><i>✱</i></div></div>
 
     <!-- ============ HOJA 3 · TATUAJES (papel de calco) ============ -->
     <section id="tatuajes" class="hoja hoja--calco">
       <header class="encabezado">
-        <p class="etiqueta">02 · La piel como lienzo</p>
+        <p class="etiqueta">03 · La piel como lienzo</p>
         <h2 class="titulo">Tatuajes con <span class="titulo__acento titulo__acento--amarillo pintura">personaje</span></h2>
         <p class="bajada">New school, retratos cartoon, cover ups y piezas de convención. Mi estilo se reconoce a metros: <strong>color, personajes y actitud</strong>. Y te muestro el proceso sesión a sesión, para que confíes desde la primera cita. Residente de <strong>Clan Tattoo Studio</strong>.</p>
       </header>
@@ -185,6 +225,18 @@
         </figure>
       </div>
 
+      <div class="sesiones">
+        <h3 class="subtitulo">Sesión a sesión</h3>
+        <ol class="linea-tiempo" role="list">
+          <li><b>Idea</b> Me cuentas qué quieres y dónde va.</li>
+          <li><b>Diseño</b> Dibujo tu personaje a medida, no lo copio de internet.</li>
+          <li><b>Stencil</b> Pasamos el diseño a la piel y ajustamos.</li>
+          <li><b>Sesiones</b> Línea, color, brillo: te muestro cada avance.</li>
+          <li><b>Cuidado</b> Te acompaño en la cicatrización.</li>
+        </ol>
+        <p class="nota-mano">Sigue el proceso de cada pieza en <a href="https://www.instagram.com/david_pencil/" target="_blank" rel="noopener">@david_pencil</a>.</p>
+      </div>
+
       <ul class="estilos" role="list">
         <li>New school</li><li>Retrato cartoon</li><li>Cover up</li><li>Personaje propio</li><li>Piezas de convención</li>
       </ul>
@@ -194,7 +246,7 @@
     <!-- ============ HOJA 4 · TRAYECTORIA (corcho) ============ -->
     <section id="trayectoria" class="hoja hoja--corcho">
       <header class="encabezado">
-        <p class="etiqueta">03 · Te lo has ganado</p>
+        <p class="etiqueta">04 · Te lo has ganado</p>
         <h2 class="titulo titulo--claro">Premios y <span class="titulo__acento titulo__acento--amarillo pintura">jurado</span></h2>
       </header>
       <div class="tablero">
@@ -228,7 +280,7 @@
     <section id="garabatos" class="hoja hoja--rayada">
       <span class="tag tag--garabatos" aria-hidden="true">¡Garabateros mañosos!</span>
       <header class="encabezado">
-        <p class="etiqueta">04 · Muy pronto</p>
+        <p class="etiqueta">05 · Muy pronto</p>
         <h2 class="titulo">Garabatos <span class="titulo__acento titulo__acento--magenta pintura">y Mañas</span></h2>
         <p class="bajada">No solo creo: <strong>enseño</strong>. Garabatos y Mañas es la comunidad de los <em>¡Garabateros Mañosos!</em>: charlas de creación de personajes y encuentros de dibujo en casas de cultura y convenciones. Más que la perfección, me interesa el proceso: equivocarse, explorar y encontrar las mañas en medio del caos.</p>
       </header>

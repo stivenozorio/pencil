@@ -4,6 +4,7 @@
    - Lápiz de progreso
    - Rastro de aerosol que deja el cursor
    - Visor de obras
+   - Proceso creativo por etapas (garabato, línea, color, vida)
    - Evento de Garabatos y Mañas con cuenta regresiva (data/evento.json)
 */
 (function () {
@@ -97,14 +98,14 @@
         var a = puntos[i - 1], b = puntos[i];
         if (b.t - a.t > 80) continue; // no unir saltos
         var vida = 1 - (ahora - b.t) / VIDA;
-        ctx.strokeStyle = "rgba(232, 71, 155," + (0.7 * vida).toFixed(3) + ")";
+        ctx.strokeStyle = "rgba(218, 98, 201," + (0.7 * vida).toFixed(3) + ")";
         ctx.lineWidth = 1 + 3 * vida;
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
         ctx.lineTo(b.x, b.y);
         ctx.stroke();
         // salpicado de aerosol alrededor del trazo (posiciones fijas por punto)
-        ctx.fillStyle = "rgba(232, 71, 155," + (0.45 * vida).toFixed(3) + ")";
+        ctx.fillStyle = "rgba(218, 98, 201," + (0.45 * vida).toFixed(3) + ")";
         for (var k = 0; k < b.gotas.length; k += 2) {
           ctx.fillRect(b.x + b.gotas[k], b.y + b.gotas[k + 1], 1.6, 1.6);
         }
@@ -162,6 +163,47 @@
       if (e.key === "ArrowRight") mostrar(actual + 1);
     });
     visor.addEventListener("close", function () { if (origen) origen.focus(); });
+  }
+
+  /* ---------- El proceso: del garabato al muñequito ---------- */
+  var proceso = document.querySelector("[data-proceso]");
+  if (proceso) {
+    var pasos = proceso.querySelectorAll("[data-paso]");
+    var explicaciones = proceso.querySelectorAll("[data-explica]");
+    var nota = proceso.querySelector("[data-proceso-nota]");
+    var nombres = { 1: "1 · Garabato", 2: "2 · Línea", 3: "3 · Color", 4: "4 · ¡Vida!" };
+    var auto = null;
+
+    var irA = function (n) {
+      proceso.setAttribute("data-etapa", String(n));
+      pasos.forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-paso") === String(n))); });
+      explicaciones.forEach(function (li) { li.classList.toggle("activo", li.getAttribute("data-explica") === String(n)); });
+      nota.textContent = nombres[n];
+    };
+    var parar = function () { if (auto) { clearInterval(auto); auto = null; } };
+
+    irA(sinMovimiento ? 4 : 1);
+    pasos.forEach(function (b) {
+      b.addEventListener("click", function () {
+        parar();
+        irA(Number(b.getAttribute("data-paso")));
+      });
+    });
+
+    // Al verlo por primera vez, el dibujo avanza solo hasta cobrar vida
+    if (!sinMovimiento && "IntersectionObserver" in window) {
+      var vistaProceso = new IntersectionObserver(function (entradas) {
+        if (!entradas[0].isIntersecting) return;
+        vistaProceso.disconnect();
+        var n = 1;
+        auto = setInterval(function () {
+          n += 1;
+          irA(n);
+          if (n >= 4) parar();
+        }, 1700);
+      }, { threshold: 0.45 });
+      vistaProceso.observe(proceso.querySelector(".proceso-lab__lienzo"));
+    }
   }
 
   /* ---------- Garabatos y Mañas: evento ---------- */

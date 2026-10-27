@@ -9,7 +9,9 @@ Sitio estático (HTML/CSS/JS sin build) para el artista Pencil. Se publica por F
 
 ## Dirección de diseño (no negociable)
 - **Ilustrativo, no “moderno”**: todo se ve como hojas de papel, lápiz y garabatos. Nada de glassmorphism, gradientes de SaaS ni tarjetas genéricas.
-- El lápiz es **amarillo** (`--amarillo`) y el borrador **magenta** (`--magenta`). El cursor es un lápiz.
+- Colores **del logo**: lápiz amarillo `--amarillo` #ecbd15, borrador rosa `--rosa` #f0ace6 (fuerte `--magenta` #da62c9), virola `--virola` #c3c3c3, tinta negra y fondo grafito. No inventar colores nuevos.
+- Estilo underground: muro oscuro, afiches rasgados con sombra dura, aerosol, tags, cintas de peligro. El cursor es un lápiz.
+- El **proceso creativo** es parte de la marca (garabato → línea → color → vida; sesión a sesión en tatuajes). Mostrarlo siempre que se pueda.
 - Tipografías: Luckiest Guy (títulos), Patrick Hand / Patrick Hand SC (texto y rótulos).
 - Sombras duras (sin blur) en botones, bordes temblorosos (`--borde-mano`), rotaciones pequeñas.
 - Texto magenta sobre papel: usar `--magenta-txt` (contraste AA), no `--magenta`.

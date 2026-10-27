@@ -7,21 +7,22 @@ Sitio de **Pencil, “el de los muñequitos”**: muralismo y graffiti (lo princ
 
 ## Concepto visual
 
-Una mesa de dibujo con hojas de papel encima. Cada sección es un papel distinto:
+Un muro de calle con afiches rasgados pegados encima. Cada sección es un papel distinto:
 
 | Sección | Papel |
 |---|---|
 | Portada | Libreta de bocetos con espiral |
 | Murales (principal) | Hoja con ladrillos dibujados a lápiz + polaroids con cinta |
+| El proceso | Papel de boceto: el lápiz pasa de garabato a línea, color y “¡vida!” |
 | Tatuajes | Papel de calco (transfer) |
-| Trayectoria | Tablero de corcho con notas y chinches |
+| Trayectoria | Cartulina negra con stickers y chinches |
 | Garabatos y Mañas | Cuaderno rayado con margen magenta |
 | Contacto | Nota amarilla con avión de papel |
 
-Detalles: el cursor es un lápiz (amarillo con borrador magenta) y en enlaces se voltea al borrador; el cursor deja un trazo de grafito que se borra solo; un lápiz arriba “escribe” el progreso al bajar; los subrayados, estrellas y el avión se dibujan solos al aparecer. Todo respeta `prefers-reduced-motion`.
+Detalles: el cursor es un lápiz (amarillo con borrador magenta) y en enlaces se voltea al borrador; el cursor deja un rastro de aerosol que se borra solo; un lápiz arriba “escribe” el progreso al bajar; los subrayados, estrellas y el avión se dibujan solos al aparecer. Todo respeta `prefers-reduced-motion`.
 
 Tipografías: **Luckiest Guy** (títulos, parecida al letrero PENCIL), **Patrick Hand** y **Patrick Hand SC** (rotulación de cómic, como el documento de ilustración).
-Colores: lápiz `#f7c51e`, borrador `#e8479b`, tinta `#1b1b1b`, papel `#fdfaf2`.
+Colores tomados del logo: lápiz `#ecbd15` (brillo `#fcdb78`), borrador `#f0ace6` (fuerte `#da62c9`, texto `#801e72`), virola `#c3c3c3`, tinta `#1b1b1b`, fondo grafito `#141414`.
 
 ## Estructura
 
@@ -86,3 +87,7 @@ Según los requerimientos, la venta se hará con una pasarela reconocida (recome
 3. Panel de validación (con login) que escanea el QR y marca la entrada como usada una sola vez (transacción en base de datos).
 4. Control de aforo y registro de entradas vendidas.
 5. Todo se prueba primero en `pencil.digicyus.com` con pagos de prueba antes de abrir la venta.
+
+## Proceso creativo
+
+Las etapas de `assets/img/proceso-*.webp` se generaron a partir del logo (garabato, entintado y color) como demostración. Cuando David entregue fotos o videos reales de boceto → muro / diseño → tatuaje, reemplazarlas por esas.
