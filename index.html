@@ -7,7 +7,7 @@
   <meta name="description" content="Pencil, “el de los muñequitos”: muralista, grafitero y tatuador de Bogotá. Murales con personaje para negocios, tatuajes new school y cartoon, y los encuentros de dibujo Garabatos y Mañas.">
   <!-- Subdominio de pruebas: quitar esta línea al pasar a producción -->
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#f7c51e">
+  <meta name="theme-color" content="#111111">
   <meta property="og:title" content="Da Pencil · El de los muñequitos">
   <meta property="og:description" content="Murales, graffiti y tatuajes con personajes que tienen actitud. Bogotá, Colombia.">
   <meta property="og:image" content="assets/img/obra/mural-corferias.webp">
@@ -16,7 +16,7 @@
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Patrick+Hand&family=Patrick+Hand+SC&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Patrick+Hand&family=Patrick+Hand+SC&family=Rubik+Wet+Paint&family=Sedgwick+Ave+Display&display=swap">
   <link rel="preload" as="image" href="assets/img/david-caricatura.webp" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -29,6 +29,7 @@
       <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3"/>
       <feDisplacementMap in="SourceGraphic" scale="3"/>
     </filter>
+    <symbol id="splat" viewBox="-30 -20 250 230"><path fill="currentColor" d="M185.4 100.0Q185.4 100.0 168.0 106.2Q150.7 112.5 161.8 125.4Q172.9 138.3 155.7 136.2Q138.6 134.2 142.2 150.2Q145.7 166.3 136.4 168.7Q127.0 171.2 117.3 166.6Q107.5 162.1 100.1 161.6Q92.6 161.1 80.3 172.6Q68.1 184.1 63.1 172.4Q58.0 160.8 57.8 149.2Q57.7 137.5 54.8 131.4Q52.0 125.2 45.6 120.1Q39.1 115.0 33.3 107.5Q27.4 100.0 37.2 93.5Q46.9 86.9 36.3 73.9Q25.6 61.0 29.7 51.1Q33.7 41.3 43.1 36.2Q52.4 31.1 65.5 37.2Q78.5 43.3 83.7 25.7Q88.8 8.1 97.6 27.7Q106.4 47.4 117.7 35.4Q129.0 23.4 129.2 40.5Q129.3 57.6 139.0 57.2Q148.7 56.9 162.6 58.4Q176.5 59.9 168.3 72.5Q160.1 85.2 172.8 92.6ZM-18.3 131.2a7.7 7.7 0 1 0 .1 0ZM-9.3 117.6a2.4 2.4 0 1 0 .1 0ZM59.7 -2.8a8.0 8.0 0 1 0 .1 0ZM136.9 15.2a4.3 4.3 0 1 0 .1 0ZM53.9 26.3a4.8 4.8 0 1 0 .1 0ZM141.0 176.6a2.4 2.4 0 1 0 .1 0ZM106.6 12.1a3.5 3.5 0 1 0 .1 0ZM7.6 173.5a2.5 2.5 0 1 0 .1 0ZM-6.2 132.7a7.3 7.3 0 1 0 .1 0ZM145.2 -5.0a3.7 3.7 0 1 0 .1 0ZM9.1 149.2a7.3 7.3 0 1 0 .1 0ZM183.1 76.6a3.1 3.1 0 1 0 .1 0ZM105.5 191.8a4.9 4.9 0 1 0 .1 0ZM18.8 50.3a2.0 2.0 0 1 0 .1 0Z"/></symbol>
   </svg>
 
   <!-- El lápiz que escribe mientras bajas -->
@@ -63,7 +64,7 @@
     <section id="inicio" class="hoja hoja--libreta portada">
       <div class="espiral" aria-hidden="true"></div>
       <div class="portada__texto">
-        <p class="nota-mano revela">Muralismo · Graffiti · Tattoo — Bogotá</p>
+        <p class="rotulo revela">Muralismo · Graffiti · Tattoo — Bogotá</p>
         <h1 class="portada__titulo">
           <svg class="resaltador" viewBox="0 0 600 140" preserveAspectRatio="none" aria-hidden="true"><path d="M18 92C120 60 260 70 380 58s170-8 200 6M30 112c140-22 300-24 540-20" fill="none" stroke="#f7c51e" stroke-width="34" stroke-linecap="round" pathLength="1"/></svg>
           <img src="assets/img/pencil-wordmark.webp" width="1400" height="441" alt="Pencil">
@@ -75,6 +76,9 @@
           <a class="boton boton--magenta" href="https://wa.me/573117457444?text=Hola%20Pencil%2C%20quiero%20agendar%20un%20tatuaje%20%E2%9C%8F%EF%B8%8F" target="_blank" rel="noopener">Quiero un tatuaje</a>
         </div>
       </div>
+      <svg class="mancha mancha--magenta" aria-hidden="true"><use href="#splat"/></svg>
+      <svg class="mancha mancha--amarilla" aria-hidden="true"><use href="#splat"/></svg>
+      <span class="tag tag--hero" aria-hidden="true">DaPe</span>
       <figure class="portada__arte">
         <img class="portada__david" src="assets/img/david-caricatura.webp" width="1024" height="1100" alt="Caricatura de David Pencil con gorra y gafas, sosteniendo un lápiz, junto a su mascota: un lápiz amarillo con borrador magenta y alas.">
         <figcaption class="globo" aria-hidden="true">Del muro a la piel,<br>sin perder el trazo.</figcaption>
@@ -91,13 +95,14 @@
       <p>“Solo se trata de dibujar lo que sientes y sentir lo que dibujas.”</p>
     </aside>
 
+    <div class="cinta-peligro " aria-hidden="true"><div class="cinta-peligro__pista"><span>Muralismo</span><i>✱</i><span>Graffiti</span><i>✱</i><span>Personajes con actitud</span><i>✱</i><span>Bogotá</span><i>✱</i><span>Del muro a la piel</span><i>✱</i><span>Muralismo</span><i>✱</i><span>Graffiti</span><i>✱</i><span>Personajes con actitud</span><i>✱</i><span>Bogotá</span><i>✱</i><span>Del muro a la piel</span><i>✱</i></div></div>
+
     <!-- ============ HOJA 2 · MURALES (principal) ============ -->
     <section id="murales" class="hoja hoja--muro">
+      <span class="tag tag--muro" aria-hidden="true">Pencil was here</span>
       <header class="encabezado">
         <p class="etiqueta">01 · Lo principal</p>
-        <h2 class="titulo">Muros que <span class="titulo__acento titulo__acento--magenta">hablan
-          <svg class="goteo" viewBox="0 0 240 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 4h240v8c-8 0-9 6-10 18s-6 13-7 0-3-14-12-14-10 30-12 34-6 2-6-12-6-20-18-20-14 8-16 14-4 4-5-2-8-12-20-12-15 16-16 26-6 6-6-6-6-20-20-20-20 6-22 10-4 2-4-4-10-6-22-6-14 20-16 34-5 6-6-6-4-28-18-28H0z" fill="#e8479b"/></svg>
-        </span></h2>
+        <h2 class="titulo">Muros que <span class="titulo__acento titulo__acento--magenta pintura">hablan</span></h2>
         <p class="bajada">Graffiti y muralismo son mi lenguaje principal. Cafés, pizzerías, bares y tiendas de Bogotá me llaman para que <strong>sus muros tengan un personaje que la gente recuerde</strong>: hecho a la medida de tu negocio, con mi trazo.</p>
       </header>
 
@@ -154,11 +159,13 @@
       </div>
     </section>
 
+    <div class="cinta-peligro cinta-peligro--magenta" aria-hidden="true"><div class="cinta-peligro__pista"><span>Tattoo</span><i>✱</i><span>New school</span><i>✱</i><span>Cartoon</span><i>✱</i><span>Cover up</span><i>✱</i><span>Clan Tattoo Studio</span><i>✱</i><span>Tattoo</span><i>✱</i><span>New school</span><i>✱</i><span>Cartoon</span><i>✱</i><span>Cover up</span><i>✱</i><span>Clan Tattoo Studio</span><i>✱</i></div></div>
+
     <!-- ============ HOJA 3 · TATUAJES (papel de calco) ============ -->
     <section id="tatuajes" class="hoja hoja--calco">
       <header class="encabezado">
         <p class="etiqueta">02 · La piel como lienzo</p>
-        <h2 class="titulo">Tatuajes con <span class="titulo__acento titulo__acento--amarillo">personaje</span></h2>
+        <h2 class="titulo">Tatuajes con <span class="titulo__acento titulo__acento--amarillo pintura">personaje</span></h2>
         <p class="bajada">New school, retratos cartoon, cover ups y piezas de convención. Mi estilo se reconoce a metros: <strong>color, personajes y actitud</strong>. Y te muestro el proceso sesión a sesión, para que confíes desde la primera cita. Residente de <strong>Clan Tattoo Studio</strong>.</p>
       </header>
 
@@ -188,7 +195,7 @@
     <section id="trayectoria" class="hoja hoja--corcho">
       <header class="encabezado">
         <p class="etiqueta">03 · Te lo has ganado</p>
-        <h2 class="titulo titulo--claro">Premios y <span class="titulo__acento titulo__acento--amarillo">jurado</span></h2>
+        <h2 class="titulo titulo--claro">Premios y <span class="titulo__acento titulo__acento--amarillo pintura">jurado</span></h2>
       </header>
       <div class="tablero">
         <div class="papelito papelito--amarillo revela">
@@ -219,9 +226,10 @@
 
     <!-- ============ HOJA 5 · GARABATOS Y MAÑAS (cuaderno rayado) ============ -->
     <section id="garabatos" class="hoja hoja--rayada">
+      <span class="tag tag--garabatos" aria-hidden="true">¡Garabateros mañosos!</span>
       <header class="encabezado">
         <p class="etiqueta">04 · Muy pronto</p>
-        <h2 class="titulo">Garabatos <span class="titulo__acento titulo__acento--magenta">y Mañas</span></h2>
+        <h2 class="titulo">Garabatos <span class="titulo__acento titulo__acento--magenta pintura">y Mañas</span></h2>
         <p class="bajada">No solo creo: <strong>enseño</strong>. Garabatos y Mañas es la comunidad de los <em>¡Garabateros Mañosos!</em>: charlas de creación de personajes y encuentros de dibujo en casas de cultura y convenciones. Más que la perfección, me interesa el proceso: equivocarse, explorar y encontrar las mañas en medio del caos.</p>
       </header>
 
@@ -246,6 +254,8 @@
       </div>
     </section>
 
+    <div class="cinta-peligro " aria-hidden="true"><div class="cinta-peligro__pista"><span>¿Hablamos?</span><i>✱</i><span>Garabateros mañosos</span><i>✱</i><span>Pencil was here</span><i>✱</i><span>Bogotá</span><i>✱</i><span>¿Hablamos?</span><i>✱</i><span>Garabateros mañosos</span><i>✱</i><span>Pencil was here</span><i>✱</i><span>Bogotá</span><i>✱</i></div></div>
+
     <!-- ============ HOJA 6 · CONTACTO (nota doblada) ============ -->
     <section id="contacto" class="hoja hoja--nota">
       <svg class="avion" viewBox="0 0 120 80" aria-hidden="true"><path d="M4 40 116 6 70 74 56 48zM56 48l60-42M56 48l-8 24 22-20" pathLength="1"/></svg>
@@ -260,6 +270,7 @@
   </main>
 
   <footer class="pie">
+    <span class="tag tag--pie" aria-hidden="true">Pencil</span>
     <img src="assets/img/mascota.webp" width="40" height="40" alt="" loading="lazy">
     <p>© <span data-anio>2026</span> Da Pencil · Bogotá, Colombia</p>
     <p class="pie__digicy">Página dibujada por <a href="https://digicyus.com" target="_blank" rel="noopener">Digicy</a></p>

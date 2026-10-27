@@ -2,7 +2,7 @@
    - Menú móvil
    - Aparición de elementos y trazos al bajar
    - Lápiz de progreso
-   - Rastro de grafito que deja el cursor
+   - Rastro de aerosol que deja el cursor
    - Visor de obras
    - Evento de Garabatos y Mañas con cuenta regresiva (data/evento.json)
 */
@@ -67,7 +67,7 @@
   }, { passive: true });
   actualizarProgreso();
 
-  /* ---------- Rastro de grafito ---------- */
+  /* ---------- Rastro de aerosol ---------- */
   var lienzo = document.querySelector(".grafito");
   if (punteroFino && !sinMovimiento && lienzo.getContext) {
     var ctx = lienzo.getContext("2d");
@@ -97,12 +97,17 @@
         var a = puntos[i - 1], b = puntos[i];
         if (b.t - a.t > 80) continue; // no unir saltos
         var vida = 1 - (ahora - b.t) / VIDA;
-        ctx.strokeStyle = "rgba(45, 42, 38," + (0.55 * vida).toFixed(3) + ")";
-        ctx.lineWidth = 0.6 + 1.6 * vida;
+        ctx.strokeStyle = "rgba(232, 71, 155," + (0.7 * vida).toFixed(3) + ")";
+        ctx.lineWidth = 1 + 3 * vida;
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
         ctx.lineTo(b.x, b.y);
         ctx.stroke();
+        // salpicado de aerosol alrededor del trazo (posiciones fijas por punto)
+        ctx.fillStyle = "rgba(232, 71, 155," + (0.45 * vida).toFixed(3) + ")";
+        for (var k = 0; k < b.gotas.length; k += 2) {
+          ctx.fillRect(b.x + b.gotas[k], b.y + b.gotas[k + 1], 1.6, 1.6);
+        }
       }
       if (puntos.length) {
         requestAnimationFrame(dibujar);
@@ -114,7 +119,9 @@
     window.addEventListener("pointermove", function (e) {
       if (e.pointerType !== "mouse") return;
       // la punta del cursor-lápiz está en (5, 27) del icono de 32px
-      puntos.push({ x: e.clientX + (Math.random() - 0.5) * 0.8, y: e.clientY + (Math.random() - 0.5) * 0.8, t: performance.now() });
+      var gotas = [];
+      for (var g = 0; g < 4; g++) gotas.push((Math.random() - 0.5) * 14, (Math.random() - 0.5) * 14);
+      puntos.push({ x: e.clientX, y: e.clientY, t: performance.now(), gotas: gotas });
       if (puntos.length > 160) puntos.shift();
       if (!animando) {
         animando = true;
